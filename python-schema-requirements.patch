@@ -1,0 +1,19 @@
+--- schema-0.7.2/requirements.txt.orig	2020-04-15 01:51:34.000000000 +0200
++++ schema-0.7.2/requirements.txt	2020-09-11 20:55:32.136670218 +0200
+@@ -1 +1 @@
+-contextlib2>=0.5.5
++contextlib2>=0.5.5;python_version<"2.7"
+--- schema-0.7.2/test_schema.py.orig	2020-04-15 01:51:34.000000000 +0200
++++ schema-0.7.2/test_schema.py	2020-09-11 21:06:30.749768871 +0200
+@@ -10,7 +10,10 @@
+ from functools import partial
+ from operator import methodcaller
+ 
+-from mock import Mock
++try:
++    from unittest.mock import Mock
++except:
++    from mock import Mock
+ from pytest import mark, raises
+ from schema import (
+     And,
