@@ -8,7 +8,7 @@ Summary:	Schema validation just got Pythonic
 Summary(pl.UTF-8):	Pythonowe sprawdzanie zgodności ze schematem
 Name:		python-schema
 Version:	0.7.2
-Release:	3
+Release:	4
 License:	MIT
 Group:		Libraries/Python
 #Source0Download: https://pypi.org/simple/schema/
