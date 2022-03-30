@@ -7,13 +7,15 @@
 Summary:	Schema validation just got Pythonic
 Summary(pl.UTF-8):	Pythonowe sprawdzanie zgodności ze schematem
 Name:		python-schema
-Version:	0.7.2
-Release:	4
+# keep 0.7.4 here for python2 support
+# (despite python 2.x in classifiers, 0.7.5 uses inspect.signature, which requires python 3.3+)
+Version:	0.7.4
+Release:	1
 License:	MIT
 Group:		Libraries/Python
 #Source0Download: https://pypi.org/simple/schema/
 Source0:	https://files.pythonhosted.org/packages/source/s/schema/schema-%{version}.tar.gz
-# Source0-md5:	e9b98f979dbda29c3f7bc63e09b20878
+# Source0-md5:	37bded9e34826015e66e98b7c700467f
 Patch0:		%{name}-requirements.patch
 URL:		https://pypi.org/project/schema/
 %if %{with python2}
@@ -79,6 +81,7 @@ JSON-a/YAML-a (lub czegoś innego) do typów pythonowych.
 %py_build
 
 %if %{with tests}
+PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 \
 %{__python} -m pytest test_schema.py
 %endif
 %endif
@@ -87,6 +90,7 @@ JSON-a/YAML-a (lub czegoś innego) do typów pythonowych.
 %py3_build
 
 %if %{with tests}
+PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 \
 %{__python3} -m pytest test_schema.py
 %endif
 %endif
