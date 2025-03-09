@@ -74,7 +74,7 @@ JSON-a/YAML-a (lub czegoś innego) do typów pythonowych.
 
 %prep
 %setup -q -n schema-%{version}
-%patch0 -p1
+%patch -P 0 -p1
 
 %build
 %if %{with python2}
