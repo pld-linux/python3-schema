@@ -10,7 +10,7 @@ Name:		python-schema
 # keep 0.7.4 here for python2 support
 # (despite python 2.x in classifiers, 0.7.5 uses inspect.signature, which requires python 3.3+)
 Version:	0.7.4
-Release:	1
+Release:	2
 License:	MIT
 Group:		Libraries/Python
 #Source0Download: https://pypi.org/simple/schema/
